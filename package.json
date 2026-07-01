@@ -1,0 +1,20 @@
+{
+  "name": "paybond-aws-operator",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "smoke": "paybond agent sandbox smoke --preset aws --result-body '{\"status\":\"completed\",\"cost_cents\":12500}' --format json"
+  },
+  "dependencies": {
+    "@paybond/kit": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
